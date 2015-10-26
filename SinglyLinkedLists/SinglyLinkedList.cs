@@ -6,6 +6,7 @@ using System.Text;
 namespace SinglyLinkedLists
 {
     public class SinglyLinkedList
+        //I read the instsructions
     {
         public SinglyLinkedList()
         {
