@@ -44,14 +44,14 @@ namespace SinglyLinkedLists
             
             if (last == null)
             {
-                SinglyLinkedListNode last = new SinglyLinkedListNode(value);
+                last = new SinglyLinkedListNode(value);
                 first = last;
                 last.Next = null;
             } else
             {
-                //create node, assign it the value passed
-               
-                last.Next = null;
+                SinglyLinkedListNode middle = last;
+                last = new SinglyLinkedListNode(value);
+                middle.Next = last;
             }
 
             
@@ -73,7 +73,14 @@ namespace SinglyLinkedLists
 
         public string First()
         {
-            return first.Value;
+            if (first == null)
+            {
+                return null;
+            }
+            else
+            {
+                return first.Value;
+            }
         }
 
         public int IndexOf(string value)

@@ -64,7 +64,13 @@ namespace SinglyLinkedLists
 
         public bool IsLast()
         {
-            throw new NotImplementedException();
+            if (this.Next == null)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }
