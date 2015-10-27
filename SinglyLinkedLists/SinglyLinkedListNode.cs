@@ -16,11 +16,12 @@ namespace SinglyLinkedLists
         public SinglyLinkedListNode Next
         {
             get { return next; }
-            set { next = value;
-                    if (next == this)
+            set { 
+                    if (value == this)
                     {
                            throw new ArgumentException();
                      }
+                next = value;
             }
         }
 
