@@ -67,10 +67,23 @@ namespace SinglyLinkedLists
             if (this.Next == null)
             {
                 return true;
-            } else
+            }
+            else
             {
                 return false;
             }
         }
+        public override bool Equals(object obj)
+        {
+            SinglyLinkedListNode node = obj as SinglyLinkedListNode;
+            if (node == null)
+            {
+                return false;
+            } else
+            {
+                return value.Equals(node.Value);
+            }
+        }
     }
+    
 }
