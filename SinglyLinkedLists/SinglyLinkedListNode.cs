@@ -57,9 +57,21 @@ namespace SinglyLinkedLists
         }
 
         // READ: http://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx
+
         public int CompareTo(Object obj)
         {
-            throw new NotImplementedException();
+            if (obj == null)
+            {
+                return 1;
+            }
+            SinglyLinkedListNode otherNode = obj as SinglyLinkedListNode;
+            if (otherNode != null)
+            {
+                return this.value.CompareTo(otherNode.value);
+            } else
+            {
+                throw new ArgumentException("is this a node?");
+            }
         }
 
         public bool IsLast()
