@@ -74,7 +74,17 @@ namespace SinglyLinkedLists
 
         public string ElementAt(int index)
         {
-            throw new NotImplementedException();
+            if (index  == 0)
+            { if (first == null) {
+                    throw new ArgumentOutOfRangeException();
+                    } else
+                {
+                    return first.Value;
+                }
+            } else
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public string First()
