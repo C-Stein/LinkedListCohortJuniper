@@ -161,6 +161,10 @@ namespace SinglyLinkedLists
             if (first.Next != null)
             {
                 LLToString.Append(", \"" + first.Next.Value + "\"");
+            } else
+            {
+                LLToString.Append(" }");
+                return LLToString.ToString();
             }
             if (first.Next.Next != null)
             {
