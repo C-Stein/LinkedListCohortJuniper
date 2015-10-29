@@ -156,9 +156,17 @@ namespace SinglyLinkedLists
             {
                 return "{ }";
             } 
-            StringBuilder LLToString = new StringBuilder("{ \"");
-            LLToString.Append(first.Value);
-            LLToString.Append("\" }");
+            StringBuilder LLToString = new StringBuilder("{ ");
+            LLToString.Append("\"" + first.Value + "\"");
+            if (first.Next != null)
+            {
+                LLToString.Append(", \"" + first.Next.Value + "\"");
+            }
+            if (first.Next.Next != null)
+            {
+                LLToString.Append(", \"" + first.Next.Next.Value + "\"");
+            }
+            LLToString.Append(" }");
             return LLToString.ToString();
           
         }
