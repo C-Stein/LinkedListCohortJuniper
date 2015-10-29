@@ -67,6 +67,15 @@ namespace UnitTestSinglyLinkedLists
             list.AddLast("grille");
             Assert.AreEqual("grille", list.ElementAt(2));
         }
+        [TestMethod]
+        public void Caitlinstest()
+        {
+            SinglyLinkedList list = new SinglyLinkedList();
+            list.AddLast("foo");
+            list.AddLast("bar");
+            list.AddLast("grille");
+            // Assert.AreEqual(3, list.Count);
+        }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
@@ -78,7 +87,7 @@ namespace UnitTestSinglyLinkedLists
             list.ElementAt(5);
         }
 
-        // CHALLENGE: Implementing negative indices, such that -1 would return "bar" and -2 would return "bar". Write tests first!
+        // CHALLENGE: Implementing negative indices, such that -1 would return "grille" and -2 would return "bar". Write tests first!
         [TestMethod]
         public void ElementAtNegativeIndex()
         {

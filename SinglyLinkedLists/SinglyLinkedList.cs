@@ -74,16 +74,28 @@ namespace SinglyLinkedLists
 
         public string ElementAt(int index)
         {
-            if (index  == 0)
-            { if (first == null) {
-                    throw new ArgumentOutOfRangeException();
-                    } else
+            if ( first == null) {
+                throw new ArgumentOutOfRangeException("There's no item there");
+            }
+            index = Math.Abs(index);
+            if (index == 0) //combine this with the following loop once you get the other stuff to work
+            {
+                return first.Value;
+            } else if (index > 0)
+            {
+                SinglyLinkedListNode result = first.Next;
+                for (int i = 1; i < index; i++)
                 {
-                    return first.Value;
+                    result = result.Next;
+                    if (result == null)
+                    {
+                        throw new ArgumentOutOfRangeException();
+                    }
                 }
+                    return result.Value;
             } else
             {
-                throw new NotImplementedException();
+                throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -114,7 +126,13 @@ namespace SinglyLinkedLists
         // HINT 3: If you highlight code and right click, you can use the refactor menu to extract a method for you...
         public string Last()
         {
-            throw new NotImplementedException();
+            if (last !=  null)
+            {
+                return last.Value;
+            } else
+            {
+                return null;
+            }
         }
 
         public void Remove(string value)
@@ -130,6 +148,19 @@ namespace SinglyLinkedLists
         public string[] ToArray()
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            if (first == null)
+            {
+                return "{ }";
+            } 
+            StringBuilder LLToString = new StringBuilder("{ \"");
+            LLToString.Append(first.Value);
+            LLToString.Append("\" }");
+            return LLToString.ToString();
+          
         }
     }
 }

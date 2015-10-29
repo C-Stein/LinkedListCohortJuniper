@@ -76,14 +76,7 @@ namespace SinglyLinkedLists
 
         public bool IsLast()
         {
-            if (this.Next == null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (Next == null);
         }
         public override bool Equals(object obj)
         {
