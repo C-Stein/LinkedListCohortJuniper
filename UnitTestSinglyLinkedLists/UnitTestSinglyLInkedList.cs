@@ -175,6 +175,19 @@ namespace UnitTestSinglyLinkedLists
             string[] expected = new string[] { "foo", "bar", "grille" };
             CollectionAssert.AreEqual(expected, list.ToArray());
         }
+        [TestMethod]
+        public void CaitlinsArrayCount()
+        {
+            SinglyLinkedList list = new SinglyLinkedList();
+            list.AddLast("foo");
+            list.AddLast("bar");
+            list.AddLast("grille");
+            string[] lexpected = new string[] { "foo", "bar", "grille" };
+            int expected = lexpected.Length;
+            string[] lactual = list.ToArray();
+            int actual = lactual.Length;
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
         public void AddFirstOnEmptyList()

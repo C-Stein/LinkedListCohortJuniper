@@ -39,9 +39,12 @@ namespace SinglyLinkedLists
             if (first == null)
             {
                 first = new SinglyLinkedListNode(value);
+                first.Next = null;
             } else
             {
-                //??
+                SinglyLinkedListNode middle = first;
+                first = new SinglyLinkedListNode(value);
+                first.Next = middle;
             }
         }
 
@@ -151,11 +154,15 @@ namespace SinglyLinkedLists
             {
                 return new string[] { };
             }
-            //string[] result = new string[1];
-            //result[0] = first.Value;
-                //return result;
+
             List<string> result = new List<string>();
             result.Add(first.Value);
+            SinglyLinkedListNode node = first.Next;
+            while (node != null)
+            {
+                result.Add(node.Value);
+                node = node.Next;
+            }
             return result.ToArray();
 
 
