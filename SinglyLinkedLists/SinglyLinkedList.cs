@@ -151,10 +151,14 @@ namespace SinglyLinkedLists
             {
                 return new string[] { };
             }
-            string[] result = new string[1];
-            result[0] = first.Value;
-                return result;
-            
+            //string[] result = new string[1];
+            //result[0] = first.Value;
+                //return result;
+            List<string> result = new List<string>();
+            result.Add(first.Value);
+            return result.ToArray();
+
+
         }
 
         public override string ToString()
