@@ -147,7 +147,14 @@ namespace SinglyLinkedLists
 
         public string[] ToArray()
         {
-            throw new NotImplementedException();
+            if (first == null)
+            {
+                return new string[] { };
+            }
+            string[] result = new string[1];
+            result[0] = first.Value;
+                return result;
+            
         }
 
         public override string ToString()
@@ -158,21 +165,14 @@ namespace SinglyLinkedLists
             } 
             StringBuilder LLToString = new StringBuilder("{ ");
             LLToString.Append("\"" + first.Value + "\"");
-            if (first.Next != null)
+            SinglyLinkedListNode node = first.Next;
+            while (node != null)
             {
-                LLToString.Append(", \"" + first.Next.Value + "\"");
-            } else
-            {
+                LLToString.Append(", \"" + node.Value + "\"");
+                node = node.Next;
+            }
                 LLToString.Append(" }");
                 return LLToString.ToString();
-            }
-            if (first.Next.Next != null)
-            {
-                LLToString.Append(", \"" + first.Next.Next.Value + "\"");
-            }
-            LLToString.Append(" }");
-            return LLToString.ToString();
-          
         }
     }
 }

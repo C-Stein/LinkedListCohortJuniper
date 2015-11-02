@@ -80,6 +80,7 @@ namespace SinglyLinkedLists
         }
         public override bool Equals(object obj)
         {
+            //return (this.CompareTo(obj) == 0);
             SinglyLinkedListNode node = obj as SinglyLinkedListNode;
             if (node == null)
             {
