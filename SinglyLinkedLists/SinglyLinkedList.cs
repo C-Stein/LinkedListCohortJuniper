@@ -31,7 +31,24 @@ namespace SinglyLinkedLists
 
         public void AddAfter(string existingValue, string value)
         {
-            throw new NotImplementedException();
+            SinglyLinkedListNode adding = new SinglyLinkedListNode(value);
+            SinglyLinkedListNode test = first;
+            while (true) {
+                if (test == null)
+                {
+                    throw new ArgumentException();
+                }
+                if (test != null)
+                {
+                    if (test.Value == existingValue)
+                    {
+                        adding.Next = test.Next;
+                        test.Next = adding;
+                        break;
+                    }
+                    test = test.Next;
+                } 
+            }
         }
 
         public void AddFirst(string value)
