@@ -252,7 +252,35 @@ namespace SinglyLinkedLists
 
         public void Sort() // use at least 2 algorithms (quick sort, bubble sort, merge sort, insertion/selection sort)
         {
-            throw new NotImplementedException();
+            if (Count() == 0)
+            {
+                return;
+            }
+ 
+            SinglyLinkedListNode left = first;
+            SinglyLinkedListNode right = first.Next;
+            bool swapOccured = false;
+            while (right != null)
+            {
+                if (left > right)
+                {
+                    //nodes ought to be swapped
+                    string value = left.Value;
+                    left.Value = right.Value;
+                    right.Value = value;
+                    swapOccured = true;
+                }
+
+                left = right;
+                right = left.Next;
+            }
+           if(swapOccured)
+           {
+                Sort();
+           }
+
+
+
         }
 
         public string[] ToArray()
